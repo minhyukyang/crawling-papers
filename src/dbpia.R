@@ -34,7 +34,8 @@ elem_keyword_id$clickElement()
 elem_keyword_id$clearElement() # elem_login.clear()
 elem_keyword_id$sendKeysToElement(list(keyword)) # elem_login.send_keys('ID') 
 
-elem_search_button <- remDr$findElement(using='xpath', value='//*[@id="header"]/div[5]/div[6]/div[1]/div[1]/a')
+# elem_search_button <- remDr$findElement(using='xpath', value='//*[@id="header"]/div[5]/div[6]/div[1]/div[1]/a')
+elem_search_button <- remDr$findElement(using='xpath', value='//*[@id="header"]/div[5]/div[6]/div[2]/div[1]/a')
 elem_search_button$clickElement() # driver.find_element_by_xpath(xpath).click() 
 
 # 기간 지정 및 체크박스 설정
@@ -89,7 +90,6 @@ items_source <- remDr$getPageSource()[[1]]
 items_source_html <- read_html(items_source)
 #dev_search_list > li:nth-child(487)
 
-
 list_title <- items_source_html %>% html_nodes("#dev_search_list > li") %>% html_nodes(".titWrap") %>% html_text()
 list_author <- items_source_html %>% html_nodes("#dev_search_list > li") %>% html_nodes(".author") %>% html_text()
 list_publisher <- items_source_html %>% html_nodes("#dev_search_list > li") %>% html_nodes(".publisher") %>% html_text()
@@ -103,4 +103,5 @@ list_date <- items_source_html %>% html_nodes("#dev_search_list > li") %>% html_
 
 # 초록 추출
 # 논문 다운로드 구현
+# 논문 다운로드 후 PDF 추출출
 
