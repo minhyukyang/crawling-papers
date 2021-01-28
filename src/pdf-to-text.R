@@ -31,5 +31,3 @@ pdf_1 %>%
 #   filter(str_detect(text, "요약|요 약")) %>% 
 #   select(element_id) %>% 
 #   pull()
-#   
-#
