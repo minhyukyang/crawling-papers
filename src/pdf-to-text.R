@@ -24,10 +24,10 @@ pdf_1 %>%
 # - 다단 구분
 # - section 구분
 
-# # 요약 부분 추출
-# pdf_1 %>% 
-#   filter(page_id != 1) %>% 
-#   mutate(text = gsub("\\s+", " ", text)) %>% 
-#   filter(str_detect(text, "요약|요 약")) %>% 
-#   select(element_id) %>% 
-#   pull()
+# 요약 부분 추출
+pdf_1 %>%
+  filter(page_id != 1) %>%
+  mutate(text = gsub("\\s+", " ", text)) %>%
+  filter(str_detect(text, "요약|요 약")) %>%
+  select(element_id) %>%
+  pull()
